@@ -98,11 +98,35 @@ const editMentorByID = async (req, res) => {
 
 }
 
-
+const deleteMentor = async (req, res)=>{
+    try{
+        let {id} = req.params
+        let mentor = await mentorModel.findOne({id:id})
+        if(!mentor){
+            res.status(404).send({
+                mesage:`Mentor with the give id: ${id} does not exsits!!`
+            })
+        }
+        else{
+           let delMentor =  await mentorModel.deleteOne({id:id})
+           if(delMentor.deletedCount){
+            res.status(200).send({
+                message: `Mentor Data deleted`
+            })
+           } 
+        }
+    }
+    catch (error){
+        res.status(500).send({
+            message: error.message || "Internal Server Error"
+        })
+    }
+}
 
 export default {
     createMentor,
     getAllMentors,
     getMentorByID,
     editMentorByID,
+    deleteMentor
 }
