@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "f900c3c0-be4f-4b9f-9f17-67047a4038ed",
+		"name": "mentor-student-assigning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24751227"
+	},
+	"item": [
+		{
+			"name": "students",
+			"item": [
+				{
+					"name": "getAllStudents",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getStudentByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/students/getStudentByID/d5c2fdf7-6d53-4000-a592-6953bc7c5ff",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"students",
+								"getStudentByID",
+								"d5c2fdf7-6d53-4000-a592-6953bc7c5ff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vignesh\",\r\n    \"email\": \"vignesh@gmail.com\",\r\n    \"mobile\": \"97645456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/users/createUser",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"users",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStudent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vignesh\",\r\n    \"email\": \"vignesh@gmail.com\",\r\n    \"mobile\": \"97645456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/students/updateStudent/d5c2fdf7-6d53-4000-a592-6953bc7c5ff6/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"students",
+								"updateStudent",
+								"d5c2fdf7-6d53-4000-a592-6953bc7c5ff6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStudent",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mentors",
+			"item": [
+				{
+					"name": "createMentor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Prabhu\",\r\n    \"mobile\": \"9944177142\",\r\n    \"email\": \"prabhu@gmail.com\",\r\n    \"students\":[\r\n        \"d0ce654f-4e50-4fff-bd72-66237f32185d\",\r\n        \"d0ce654f-4e50-4fff-bd72-66237f32185d\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/mentors/createMentor",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"mentors",
+								"createMentor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllMentors",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getMentorByID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateMentor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Prabhu\",\r\n    \"mobile\": \"9944177142\",\r\n    \"email\": \"pr@gmail.com\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/mentors/editMentors/b0259f01-e408-479c-bceb-0b068623e065",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"mentors",
+								"editMentors",
+								"b0259f01-e408-479c-bceb-0b068623e065"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mentor-student-assignment",
+			"item": [
+				{
+					"name": "getPreviousMentorsforStudents",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getStudentsforMentors",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "changeMentorforStudent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/assigning/students/:studentId/mentor/:mentorId",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"assigning",
+								"students",
+								":studentId",
+								"mentor",
+								":mentorId"
+							],
+							"variable": [
+								{
+									"key": "studentId",
+									"value": ""
+								},
+								{
+									"key": "mentorId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addMentor2Student",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "https://student-mentor-assigning-lkcd.onrender.com",
+			"type": "string"
+		}
+	]
+}
