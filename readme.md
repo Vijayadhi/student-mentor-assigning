@@ -6,6 +6,11 @@ Here’s an updated version of the `README.md` file to reflect the changes you'v
 
 This API manages mentors and students, allowing you to create, update, and delete records for mentors and students, assign students to mentors, and more.
 
+### You can even test our api online ###
+- install Postman
+- install the collection from the repository
+- open postman and import the collection.
+- now you can able to be test our api without installing the repository
 
 
 ### Table of Contents
@@ -68,7 +73,7 @@ This API manages mentors and students, allowing you to create, update, and delet
 
 ---
 
-### API Endpoints
+### API Endpoints 
 
 #### 1. Student Endpoints
 
