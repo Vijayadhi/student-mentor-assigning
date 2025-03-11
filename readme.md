@@ -1,7 +1,3 @@
-Here’s an updated version of the `README.md` file to reflect the changes you've made in the routes and functions for student and mentor management:
-
----
-
 ## Mentor-Student Management API
 
 This API manages mentors and students, allowing you to create, update, and delete records for mentors and students, assign students to mentors, and more.
